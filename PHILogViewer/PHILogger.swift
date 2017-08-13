@@ -17,6 +17,12 @@ class PHILogger: NSObject {
         logView.delegate = instance
         return logView
     }()
+    
+    private static var logs: [String] = [] {
+        didSet {
+            view.textView.text = logs.joined(separator: "\n")
+        }
+    }
 
     public static func setup() {
         let tap = UITapGestureRecognizer(target: instance, action: #selector(windowTapped(_:)))
@@ -24,7 +30,11 @@ class PHILogger: NSObject {
         guard let window = UIApplication.shared.delegate?.window else { fatalError() }
         window?.addGestureRecognizer(tap)
     }
-    
+
+    public static func log(_ text: String) {
+        logs.append("\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)) \(text)")
+    }
+
     @objc private func windowTapped(_ tap: UITapGestureRecognizer) {
         UIApplication.shared.keyWindow?.addSubview(PHILogger.view)
         PHILogger.view.frame = UIScreen.main.bounds
