@@ -38,6 +38,7 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
+        PHILogger.log("insert new object")
         objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
@@ -46,6 +47,10 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        DispatchQueue.global().async {
+            PHILogger.log("show detail")
+        }
+
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row] as! NSDate

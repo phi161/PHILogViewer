@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
 
 
     func configureView() {
+        PHILogger.log("DetailViewController.configureView")
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
