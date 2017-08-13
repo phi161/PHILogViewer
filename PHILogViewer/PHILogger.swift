@@ -18,7 +18,7 @@ class PHILogger: NSObject {
         return logView
     }()
     
-    private static var logs: [String] = [] {
+    fileprivate static var logs: [String] = [] {
         didSet {
             view.textView.text = logs.joined(separator: "\n")
         }
@@ -46,6 +46,10 @@ class PHILogger: NSObject {
 extension PHILogger: PHILogViewDelegate {
     func logViewDidClose(_ logView: PHILogView) {
         logView.removeFromSuperview()
+    }
+    
+    func logViewDidClear(_ logView: PHILogView) {
+        PHILogger.logs.removeAll()
     }
     
     func logView(_ logView: PHILogView, didResize size: ViewSize) {

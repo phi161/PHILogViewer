@@ -16,6 +16,7 @@ enum ViewSize {
 
 protocol PHILogViewDelegate: class {
     func logViewDidClose(_ logView: PHILogView)
+    func logViewDidClear(_ logView: PHILogView)
     func logView(_ logView: PHILogView, didResize size: ViewSize)
 }
 
@@ -33,6 +34,10 @@ class PHILogView: UIView {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         delegate?.logViewDidClose(self)
+    }
+    
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        delegate?.logViewDidClear(self)
     }
     
     @IBAction func resizeButtonTapped(_ sender: UIButton) {
