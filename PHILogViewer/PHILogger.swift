@@ -20,7 +20,9 @@ class PHILogger: NSObject {
     
     fileprivate static var logs: [String] = [] {
         didSet {
-            view.textView.text = logs.joined(separator: "\n")
+            DispatchQueue.main.async {
+                view.textView.text = logs.joined(separator: "\n")
+            }
         }
     }
 
