@@ -10,4 +10,8 @@ import UIKit
 
 class PHILogView: UIView {
     @IBOutlet weak var textView: UITextView!
+    
+    public static func loadFromNib() -> PHILogView {
+        return Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as! PHILogView!
+    }
 }
