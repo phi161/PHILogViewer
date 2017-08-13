@@ -12,8 +12,9 @@ class PHILogger: NSObject {
 
     private static let instance = PHILogger()
     
-    static let view: PHILogView = {
+    private static let view: PHILogView = {
         let logView = PHILogView.loadFromNib()
+        logView.delegate = instance
         return logView
     }()
 
@@ -29,4 +30,10 @@ class PHILogger: NSObject {
         PHILogger.view.frame = UIScreen.main.bounds
     }
 
+}
+
+extension PHILogger: PHILogViewDelegate {
+    func logViewDidClose(_ logView: PHILogView) {
+        logView.removeFromSuperview()
+    }
 }

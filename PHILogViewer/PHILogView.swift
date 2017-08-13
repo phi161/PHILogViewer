@@ -8,10 +8,21 @@
 
 import UIKit
 
+protocol PHILogViewDelegate: class {
+    func logViewDidClose(_ logView: PHILogView)
+}
+
 class PHILogView: UIView {
     @IBOutlet weak var textView: UITextView!
+    
+    weak var delegate: PHILogViewDelegate? = nil
     
     public static func loadFromNib() -> PHILogView {
         return Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as! PHILogView!
     }
+    
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        delegate?.logViewDidClose(self)
+    }
+    
 }

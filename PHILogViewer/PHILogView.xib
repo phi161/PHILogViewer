@@ -16,19 +16,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9T-S9-ek5">
-                    <rect key="frame" x="10" y="10" width="380" height="180"/>
+                    <rect key="frame" x="10" y="10" width="380" height="140"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXB-bS-plK">
+                    <rect key="frame" x="360" y="160" width="30" height="30"/>
+                    <state key="normal" title="⤵️"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="x5i-GP-df5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vXB-bS-plK" firstAttribute="top" secondItem="U9T-S9-ek5" secondAttribute="bottom" constant="10" id="2U7-O5-5st"/>
+                <constraint firstAttribute="trailing" secondItem="vXB-bS-plK" secondAttribute="trailing" constant="10" id="Ela-b3-tHO"/>
                 <constraint firstItem="U9T-S9-ek5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Itd-EG-m0f"/>
-                <constraint firstAttribute="bottom" secondItem="U9T-S9-ek5" secondAttribute="bottom" constant="10" id="ZmC-yZ-Nuf"/>
                 <constraint firstItem="U9T-S9-ek5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="da7-7i-OT8"/>
                 <constraint firstAttribute="trailing" secondItem="U9T-S9-ek5" secondAttribute="trailing" constant="10" id="fSc-KL-PR5"/>
+                <constraint firstAttribute="bottom" secondItem="vXB-bS-plK" secondAttribute="bottom" constant="10" id="qxk-Ng-x8Q"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
