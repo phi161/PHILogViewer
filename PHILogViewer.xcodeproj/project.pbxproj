@@ -13,6 +13,8 @@
 		CFA38B5D1F40D409000413A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA38B5B1F40D409000413A7 /* Main.storyboard */; };
 		CFA38B5F1F40D409000413A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA38B5E1F40D409000413A7 /* Assets.xcassets */; };
 		CFA38B621F40D409000413A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA38B601F40D409000413A7 /* LaunchScreen.storyboard */; };
+		CFA38B6A1F40D5C3000413A7 /* PHILogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA38B691F40D5C3000413A7 /* PHILogView.swift */; };
+		CFA38B6C1F40D607000413A7 /* PHILogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA38B6B1F40D607000413A7 /* PHILogView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CFA38B5E1F40D409000413A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFA38B611F40D409000413A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFA38B631F40D409000413A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFA38B691F40D5C3000413A7 /* PHILogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHILogView.swift; sourceTree = "<group>"; };
+		CFA38B6B1F40D607000413A7 /* PHILogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHILogView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,25 @@
 		CFA38B541F40D409000413A7 /* PHILogViewer */ = {
 			isa = PBXGroup;
 			children = (
+				CFA38B631F40D409000413A7 /* Info.plist */,
 				CFA38B551F40D409000413A7 /* AppDelegate.swift */,
-				CFA38B571F40D409000413A7 /* MasterViewController.swift */,
 				CFA38B591F40D409000413A7 /* DetailViewController.swift */,
-				CFA38B5B1F40D409000413A7 /* Main.storyboard */,
+				CFA38B571F40D409000413A7 /* MasterViewController.swift */,
 				CFA38B5E1F40D409000413A7 /* Assets.xcassets */,
 				CFA38B601F40D409000413A7 /* LaunchScreen.storyboard */,
-				CFA38B631F40D409000413A7 /* Info.plist */,
+				CFA38B5B1F40D409000413A7 /* Main.storyboard */,
+				CFA38B6D1F40D9BF000413A7 /* PHILogViewer */,
 			);
 			path = PHILogViewer;
+			sourceTree = "<group>";
+		};
+		CFA38B6D1F40D9BF000413A7 /* PHILogViewer */ = {
+			isa = PBXGroup;
+			children = (
+				CFA38B691F40D5C3000413A7 /* PHILogView.swift */,
+				CFA38B6B1F40D607000413A7 /* PHILogView.xib */,
+			);
+			name = PHILogViewer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA38B621F40D409000413A7 /* LaunchScreen.storyboard in Resources */,
+				CFA38B6C1F40D607000413A7 /* PHILogView.xib in Resources */,
 				CFA38B5F1F40D409000413A7 /* Assets.xcassets in Resources */,
 				CFA38B5D1F40D409000413A7 /* Main.storyboard in Resources */,
 			);
@@ -140,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA38B5A1F40D409000413A7 /* DetailViewController.swift in Sources */,
+				CFA38B6A1F40D5C3000413A7 /* PHILogView.swift in Sources */,
 				CFA38B581F40D409000413A7 /* MasterViewController.swift in Sources */,
 				CFA38B561F40D409000413A7 /* AppDelegate.swift in Sources */,
 			);
@@ -303,6 +319,7 @@
 				CFA38B681F40D409000413A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
