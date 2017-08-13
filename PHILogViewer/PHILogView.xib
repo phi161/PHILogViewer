@@ -62,6 +62,15 @@
                         </button>
                     </subviews>
                 </stackView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5pS-3X-DEm">
+                    <rect key="frame" x="148" y="160" width="194" height="31"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="sliderTouchedUp:" destination="iN0-l3-epB" eventType="touchUpOutside" id="EcK-LB-YD8"/>
+                        <action selector="sliderTouchedUp:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ed3-IE-o2V"/>
+                        <action selector="sliderValueChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="h2b-Sa-L1N"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -69,9 +78,12 @@
                 <constraint firstItem="vXB-bS-plK" firstAttribute="top" secondItem="U9T-S9-ek5" secondAttribute="bottom" constant="10" id="Lkz-XL-o3m"/>
                 <constraint firstAttribute="bottom" secondItem="vXB-bS-plK" secondAttribute="bottom" constant="10" id="Mi2-Hk-X1i"/>
                 <constraint firstAttribute="trailing" secondItem="vXB-bS-plK" secondAttribute="trailing" constant="10" id="X0B-DY-MhK"/>
+                <constraint firstItem="vXB-bS-plK" firstAttribute="leading" secondItem="5pS-3X-DEm" secondAttribute="trailing" constant="20" id="XJK-hF-wdi"/>
                 <constraint firstAttribute="bottom" secondItem="s0F-zv-lVq" secondAttribute="bottom" constant="10" id="bXg-OL-kvv"/>
+                <constraint firstItem="5pS-3X-DEm" firstAttribute="leading" secondItem="s0F-zv-lVq" secondAttribute="trailing" constant="20" id="dU8-TR-mos"/>
                 <constraint firstItem="U9T-S9-ek5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="da7-7i-OT8"/>
                 <constraint firstAttribute="trailing" secondItem="U9T-S9-ek5" secondAttribute="trailing" constant="10" id="fSc-KL-PR5"/>
+                <constraint firstAttribute="bottom" secondItem="5pS-3X-DEm" secondAttribute="bottom" constant="10" id="gwP-kH-Fv8"/>
                 <constraint firstItem="s0F-zv-lVq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="yqT-5v-INr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -79,6 +91,7 @@
             <connections>
                 <outlet property="bottomHalfButton" destination="HB9-I8-4vu" id="zTj-xN-HqY"/>
                 <outlet property="fullscreenButton" destination="cbK-Gt-3ag" id="xAV-Gm-vWK"/>
+                <outlet property="slider" destination="5pS-3X-DEm" id="yb4-Bq-erO"/>
                 <outlet property="textView" destination="U9T-S9-ek5" id="4Nb-eg-Na8"/>
                 <outlet property="topHalfButton" destination="aRQ-rv-s9m" id="ctA-bA-0U4"/>
             </connections>

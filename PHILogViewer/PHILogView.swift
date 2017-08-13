@@ -21,10 +21,12 @@ protocol PHILogViewDelegate: class {
 }
 
 class PHILogView: UIView {
+
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var topHalfButton: UIButton!
     @IBOutlet weak var bottomHalfButton: UIButton!
     @IBOutlet weak var fullscreenButton: UIButton!
+    @IBOutlet weak var slider: UISlider!
     
     weak var delegate: PHILogViewDelegate? = nil
     
@@ -32,6 +34,17 @@ class PHILogView: UIView {
         return Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as! PHILogView!
     }
     
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        alpha = CGFloat(sender.value)
+    }
+
+    @IBAction func sliderTouchedUp(_ sender: UISlider) {
+        if sender.value < 0.1 {
+            sender.value = 0.1
+            alpha = 0.1
+        }
+    }
+
     @IBAction func closeButtonTapped(_ sender: Any) {
         delegate?.logViewDidClose(self)
     }
