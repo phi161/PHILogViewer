@@ -32,7 +32,8 @@ class PHILogger: NSObject {
     }
 
     public static func log(_ text: String) {
-        logs.append("\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)) \(text)")
+        //TODO: Using append should be faster but then we need to automatically scroll the textview to the bottom which looked buggy when using scrollRangeToVisible
+        logs.insert("\(DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)) \(text)", at: 0)
     }
 
     @objc private func windowTapped(_ tap: UITapGestureRecognizer) {
