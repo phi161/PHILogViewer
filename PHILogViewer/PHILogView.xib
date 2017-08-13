@@ -29,20 +29,51 @@
                         <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="x5i-GP-df5"/>
                     </connections>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-zv-lVq">
+                    <rect key="frame" x="10" y="160" width="90" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-rv-s9m">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="⬆️"/>
+                            <connections>
+                                <action selector="resizeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="TaL-aM-b6p"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB9-I8-4vu">
+                            <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="⬇️"/>
+                            <connections>
+                                <action selector="resizeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="JQr-fO-q0u"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-Gt-3ag">
+                            <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="↕️"/>
+                            <connections>
+                                <action selector="resizeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="nYi-Gb-14X"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vXB-bS-plK" firstAttribute="top" secondItem="U9T-S9-ek5" secondAttribute="bottom" constant="10" id="2U7-O5-5st"/>
                 <constraint firstAttribute="trailing" secondItem="vXB-bS-plK" secondAttribute="trailing" constant="10" id="Ela-b3-tHO"/>
                 <constraint firstItem="U9T-S9-ek5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Itd-EG-m0f"/>
+                <constraint firstAttribute="bottom" secondItem="s0F-zv-lVq" secondAttribute="bottom" constant="10" id="bXg-OL-kvv"/>
                 <constraint firstItem="U9T-S9-ek5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="da7-7i-OT8"/>
                 <constraint firstAttribute="trailing" secondItem="U9T-S9-ek5" secondAttribute="trailing" constant="10" id="fSc-KL-PR5"/>
                 <constraint firstAttribute="bottom" secondItem="vXB-bS-plK" secondAttribute="bottom" constant="10" id="qxk-Ng-x8Q"/>
+                <constraint firstItem="s0F-zv-lVq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="yqT-5v-INr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bottomHalfButton" destination="HB9-I8-4vu" id="zTj-xN-HqY"/>
+                <outlet property="fullscreenButton" destination="cbK-Gt-3ag" id="xAV-Gm-vWK"/>
                 <outlet property="textView" destination="U9T-S9-ek5" id="4Nb-eg-Na8"/>
+                <outlet property="topHalfButton" destination="aRQ-rv-s9m" id="ctA-bA-0U4"/>
             </connections>
             <point key="canvasLocation" x="46" y="-107"/>
         </view>

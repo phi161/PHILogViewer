@@ -12,7 +12,7 @@ class PHILogger: NSObject {
 
     private static let instance = PHILogger()
     
-    private static let view: PHILogView = {
+    fileprivate static let view: PHILogView = {
         let logView = PHILogView.loadFromNib()
         logView.delegate = instance
         return logView
@@ -45,5 +45,18 @@ class PHILogger: NSObject {
 extension PHILogger: PHILogViewDelegate {
     func logViewDidClose(_ logView: PHILogView) {
         logView.removeFromSuperview()
+    }
+    
+    func logView(_ logView: PHILogView, didResize size: ViewSize) {
+        let screenBounds = UIScreen.main.bounds
+        let quarterScreen = UIScreen.main.bounds.height/4
+        switch size {
+        case .top:
+            PHILogger.view.frame = screenBounds.insetBy(dx: 0, dy: quarterScreen).offsetBy(dx: 0, dy: -quarterScreen)
+        case .bottom:
+            PHILogger.view.frame = screenBounds.insetBy(dx: 0, dy: quarterScreen).offsetBy(dx: 0, dy: quarterScreen)
+        case .full:
+            PHILogger.view.frame = UIScreen.main.bounds
+        }
     }
 }

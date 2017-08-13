@@ -8,12 +8,22 @@
 
 import UIKit
 
+enum ViewSize {
+    case top
+    case bottom
+    case full
+}
+
 protocol PHILogViewDelegate: class {
     func logViewDidClose(_ logView: PHILogView)
+    func logView(_ logView: PHILogView, didResize size: ViewSize)
 }
 
 class PHILogView: UIView {
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var topHalfButton: UIButton!
+    @IBOutlet weak var bottomHalfButton: UIButton!
+    @IBOutlet weak var fullscreenButton: UIButton!
     
     weak var delegate: PHILogViewDelegate? = nil
     
@@ -23,6 +33,16 @@ class PHILogView: UIView {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         delegate?.logViewDidClose(self)
+    }
+    
+    @IBAction func resizeButtonTapped(_ sender: UIButton) {
+        if sender == topHalfButton {
+            delegate?.logView(self, didResize: .top)
+        } else if sender == bottomHalfButton {
+            delegate?.logView(self, didResize: .bottom)
+        } else if sender == fullscreenButton {
+            delegate?.logView(self, didResize: .full)
+        }
     }
     
 }
