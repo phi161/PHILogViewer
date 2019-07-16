@@ -31,7 +31,10 @@ class PHILogView: UIView {
     weak var delegate: PHILogViewDelegate? = nil
     
     public static func loadFromNib() -> PHILogView {
-        return Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as! PHILogView!
+        guard let logView = Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as? PHILogView else {
+            fatalError("Unable to load PHILogView from nib")
+        }
+        return logView
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
