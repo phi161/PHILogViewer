@@ -58,9 +58,9 @@ extension PHILogger: PHILogViewDelegate {
         let screenBounds = UIScreen.main.bounds
         let quarterScreen = UIScreen.main.bounds.height/4
         switch size {
-        case .top:
+        case .topHalf:
             PHILogger.view.frame = screenBounds.insetBy(dx: 0, dy: quarterScreen).offsetBy(dx: 0, dy: -quarterScreen)
-        case .bottom:
+        case .bottomHalf:
             PHILogger.view.frame = screenBounds.insetBy(dx: 0, dy: quarterScreen).offsetBy(dx: 0, dy: quarterScreen)
         case .full:
             PHILogger.view.frame = UIScreen.main.bounds

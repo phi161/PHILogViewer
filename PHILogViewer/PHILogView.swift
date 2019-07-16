@@ -9,8 +9,8 @@
 import UIKit
 
 enum ViewSize {
-    case top
-    case bottom
+    case topHalf
+    case bottomHalf
     case full
 }
 
@@ -58,9 +58,9 @@ class PHILogView: UIView {
 
     @IBAction func resizeButtonTapped(_ sender: UIButton) {
         if sender == topHalfButton {
-            delegate?.logView(self, didResize: .top)
+            delegate?.logView(self, didResize: .topHalf)
         } else if sender == bottomHalfButton {
-            delegate?.logView(self, didResize: .bottom)
+            delegate?.logView(self, didResize: .bottomHalf)
         } else if sender == fullscreenButton {
             delegate?.logView(self, didResize: .full)
         }
