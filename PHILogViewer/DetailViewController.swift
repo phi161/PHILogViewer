@@ -12,7 +12,6 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
     func configureView() {
         PHILogger.log("DetailViewController.configureView")
         // Update the user interface for the detail item.
@@ -41,6 +40,4 @@ class DetailViewController: UIViewController {
         }
     }
 
-
 }
-

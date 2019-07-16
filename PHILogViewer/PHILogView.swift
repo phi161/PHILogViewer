@@ -27,16 +27,16 @@ class PHILogView: UIView {
     @IBOutlet weak var bottomHalfButton: UIButton!
     @IBOutlet weak var fullscreenButton: UIButton!
     @IBOutlet weak var slider: UISlider!
-    
-    weak var delegate: PHILogViewDelegate? = nil
-    
+
+    weak var delegate: PHILogViewDelegate?
+
     public static func loadFromNib() -> PHILogView {
         guard let logView = Bundle.main.loadNibNamed("PHILogView", owner: self, options: nil)?.first as? PHILogView else {
             fatalError("Unable to load PHILogView from nib")
         }
         return logView
     }
-    
+
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         alpha = CGFloat(sender.value)
     }
@@ -51,11 +51,11 @@ class PHILogView: UIView {
     @IBAction func closeButtonTapped(_ sender: Any) {
         delegate?.logViewDidClose(self)
     }
-    
+
     @IBAction func clearButtonTapped(_ sender: Any) {
         delegate?.logViewDidClear(self)
     }
-    
+
     @IBAction func resizeButtonTapped(_ sender: UIButton) {
         if sender == topHalfButton {
             delegate?.logView(self, didResize: .top)
@@ -65,5 +65,5 @@ class PHILogView: UIView {
             delegate?.logView(self, didResize: .full)
         }
     }
-    
+
 }

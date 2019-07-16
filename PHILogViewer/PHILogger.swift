@@ -11,13 +11,13 @@ import UIKit
 class PHILogger: NSObject {
 
     private static let instance = PHILogger()
-    
+
     fileprivate static let view: PHILogView = {
         let logView = PHILogView.loadFromNib()
         logView.delegate = instance
         return logView
     }()
-    
+
     fileprivate static var logs: [String] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -49,11 +49,11 @@ extension PHILogger: PHILogViewDelegate {
     func logViewDidClose(_ logView: PHILogView) {
         logView.removeFromSuperview()
     }
-    
+
     func logViewDidClear(_ logView: PHILogView) {
         PHILogger.logs.removeAll()
     }
-    
+
     func logView(_ logView: PHILogView, didResize size: ViewSize) {
         let screenBounds = UIScreen.main.bounds
         let quarterScreen = UIScreen.main.bounds.height/4
